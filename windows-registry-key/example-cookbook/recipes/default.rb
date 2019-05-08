@@ -1,8 +1,4 @@
-#
-# Cookbook:: example-cookbook
-# Recipe:: default
-#
-# Copyright:: 2019, The Authors, All Rights Reserved.
+Chef::Log.warn 'hello world'
 
 # registry_key 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services' do
 #   values [

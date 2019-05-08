@@ -6,23 +6,18 @@ driver:
 
 provisioner:
   name: chef_zero
+  product_version: "14.12"
+  install_strategy: always
 
 verifier:
   name: inspec
 
-# transport:
-#   name: winrm
-#   elevated: true
-#   username: Administrator
-#   password: Pass@word1
-
 platforms:
-  - name: my-windows-2016
+  - name: windows2016
     driver:
+      box: mwrock/Windows2016
       customize:
         memory: 2048
-      # box: mwrock/Windows2016
-      box: mwrock/Windows2016
 
 suites:
   - name: default
