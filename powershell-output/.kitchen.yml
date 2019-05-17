@@ -1,0 +1,36 @@
+---
+driver:
+  name: vagrant
+  gui: false
+
+provisioner:
+  name: chef_zero
+  # product_name: chef
+  # product_version: 14.12.9
+
+transport:
+  name: winrm
+  elevated: true
+  username: vagrant
+  password: vagrant
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: bentowindows2016
+    driver:
+      box: bento/windows-2016
+      customize:
+        memory: 2048
+
+suites:
+  - name: default
+    driver:
+      vm_hostname: bentowindows2016
+    run_list:
+      - recipe[powershell-output::default]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
