@@ -4,6 +4,6 @@
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
-Chef::Log.warn 'hello tramayne'
+Chef::Log.warn 'hello world'
 
-directory 'C:\tramayne'
+directory 'C:\myexadir'
