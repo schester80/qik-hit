@@ -13,8 +13,9 @@ directory 'C:\workit'
   end
 end
 
-## SERVICE STOP
-windows_service 'stop-wrapper' do
+## SERVICE to STOP / START
+## will be used with notifies
+windows_service 'wrapper' do
   action :nothing
 end
 
@@ -34,17 +35,11 @@ end
         Write-Warning "regsvr32 exited with error $($regsvrp.ExitCode)"
     }
     EOS
-    notifies :stop, 'windows_service[start-wrapper]', :before
-    notifies :start, 'windows_service[start-wrapper]', :delayed
+    notifies :stop, 'windows_service[wrapper]', :before
+    notifies :start, 'windows_service[wrapper]', :delayed
     # not_if {  }
   end
 end
-
-# START SERVICE
-windows_service 'start-wrapper' do
-  action :nothing
-end
-
 
 # windows_path 'C:\workit' do
 #   action :add
