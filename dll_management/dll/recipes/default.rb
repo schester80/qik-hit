@@ -1,7 +1,8 @@
-Chef::Log.warn 'hello world'
+Chef::Log.warn 'WRAPPER service example'
 
 directory 'C:\workit'
 
+# don't know what DLLs you are using, so just adding some randome ones
 [
   'php_curl',
   'libcurl64'
@@ -13,11 +14,12 @@ directory 'C:\workit'
 end
 
 ## SERVICE STOP
-windows_service 'your-service-name-here' do
-  action :stop
+windows_service 'stop-wrapper' do
+  action :nothing
 end
 
 ## DLL UNLOAD / LOAD
+## please forgive, i am terrible at all things windows
 [
   'php_curl',
   'libcurl64'
@@ -32,13 +34,15 @@ end
         Write-Warning "regsvr32 exited with error $($regsvrp.ExitCode)"
     }
     EOS
+    notifies :stop, 'windows_service[start-wrapper]', :before
+    notifies :start, 'windows_service[start-wrapper]', :delayed
     # not_if {  }
   end
 end
 
 # START SERVICE
-windows_service 'chef-client' do
-  action :start
+windows_service 'start-wrapper' do
+  action :nothing
 end
 
 
