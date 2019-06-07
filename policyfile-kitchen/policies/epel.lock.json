@@ -1,0 +1,42 @@
+{
+  "revision_id": "0680cede88bdf99b88777479be96fb38552926f36fdb3ed2148404a6cf5f3493",
+  "name": "epel",
+  "run_list": [
+    "recipe[yum-epel::default]"
+  ],
+  "included_policy_locks": [
+
+  ],
+  "cookbook_locks": {
+    "yum-epel": {
+      "version": "3.3.0",
+      "identifier": "187c02d6cef471b7f37402ac80fb6ca2db347732",
+      "dotted_decimal_identifier": "6891751076721777.51777600324665595.119446718150450",
+      "cache_key": "yum-epel-3.3.0-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/yum-epel/versions/3.3.0/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/yum-epel/versions/3.3.0/download",
+        "version": "3.3.0"
+      }
+    }
+  },
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "yum-epel",
+        "= 3.3.0"
+      ]
+    ],
+    "dependencies": {
+      "yum-epel (3.3.0)": [
+
+      ]
+    }
+  }
+}

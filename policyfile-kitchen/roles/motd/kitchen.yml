@@ -1,0 +1,23 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+  log_level: 'info'
+  chef_license: 'accept'
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: bento/centos-7.6
+
+suites:
+  - name: default
+    provisioner:
+      policyfile: ../../policies/motd.rb
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:

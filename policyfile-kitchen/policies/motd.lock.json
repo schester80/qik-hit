@@ -1,0 +1,88 @@
+{
+  "revision_id": "14a064b52e8075f956b4c0a4121c24f1342ac3094633da159ab2548d3749e091",
+  "name": "motd",
+  "run_list": [
+    "recipe[yum-epel::default]",
+    "recipe[motd::default]"
+  ],
+  "included_policy_locks": [
+    {
+      "name": "epel",
+      "revision_id": "0680cede88bdf99b88777479be96fb38552926f36fdb3ed2148404a6cf5f3493",
+      "source_options": {
+        "path": "./epel.lock.json"
+      }
+    }
+  ],
+  "cookbook_locks": {
+    "chef_handler": {
+      "version": "3.0.3",
+      "identifier": "4d1b0688e8699097d2e921a3271b2667dc8ffcde",
+      "dotted_decimal_identifier": "21703288087406992.42734620216862491.42227523910878",
+      "cache_key": "chef_handler-3.0.3-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/chef_handler/versions/3.0.3/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/chef_handler/versions/3.0.3/download",
+        "version": "3.0.3"
+      }
+    },
+    "motd": {
+      "version": "0.6.4",
+      "identifier": "0d3f734666cf0865c8d7a45a22edced763afa4c3",
+      "dotted_decimal_identifier": "3728939032170248.28649801148670701.227424485745859",
+      "cache_key": "motd-0.6.4-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/motd/versions/0.6.4/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/motd/versions/0.6.4/download",
+        "version": "0.6.4"
+      }
+    },
+    "yum-epel": {
+      "version": "3.3.0",
+      "identifier": "187c02d6cef471b7f37402ac80fb6ca2db347732",
+      "dotted_decimal_identifier": "6891751076721777.51777600324665595.119446718150450",
+      "cache_key": "yum-epel-3.3.0-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/yum-epel/versions/3.3.0/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/yum-epel/versions/3.3.0/download",
+        "version": "3.3.0"
+      }
+    }
+  },
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "chef_handler",
+        "= 3.0.3"
+      ],
+      [
+        "motd",
+        "= 0.6.4"
+      ],
+      [
+        "yum-epel",
+        "= 3.3.0"
+      ]
+    ],
+    "dependencies": {
+      "chef_handler (3.0.3)": [
+
+      ],
+      "motd (0.6.4)": [
+        [
+          "chef_handler",
+          ">= 0.0.0"
+        ]
+      ],
+      "yum-epel (3.3.0)": [
+
+      ]
+    }
+  }
+}
