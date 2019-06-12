@@ -7,6 +7,8 @@ $ chef exec inspec exec check.rb \
 ```
 
 ### stop the service
+#### technically you don't need the recipe, you could ..
+#### >> simply declare the resource and attributes via CLI
 ```bash
 $ chef exec chef-run vagrant@localhost:2222 stop.rb \
 --chef-license accept \
