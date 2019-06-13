@@ -31,12 +31,12 @@ chef exec inspec exec example.rb \
 --password vagrant
 ```
 
-As you can see, the node I am testing has failed these 2 rules, which can help define priority work .. When you are ready, I can show you how to use Chef Infra to correct the security vulnerability ..
+As you can see, the node I am testing has failed these 2 rules, which can help define priority work .. When you are ready, I can show you how to use Chef Infra to correct the security vulnerabilities ..
+
+![InSpec Output](./inspec-cli.png "InSpec Output")
 
 *IMAGINE BEING ABLE TO* scan your entire infrastructure based on codified "rules" you care about, in an automated fashion .. Benefits are:
 - A common (re-usable) language to define security and compliance rules
 - Reduced time to vulnerability detection
 - Increased visibility into security vulnerabilities
 - Decreased time spent auditing infrastructure
-
-![InSpec Output](./inspec-cli.png "InSpec Output")
