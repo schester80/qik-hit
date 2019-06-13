@@ -1,4 +1,5 @@
-### Windows 2012 R2 Benchmark
+## Windows 2012 R2 Benchmark
+### As Defined by the Center for Internet Security
 - https://www.cisecurity.org/wp-content/uploads/2017/04/CIS_Microsoft_Windows_Server_2012_R2_Benchmark_v2.2.0.pdf
 
 #### Rule 1.1.1 L1
